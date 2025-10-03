@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lily Yang | Software Development Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #4F46E5, #818CF8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 antialiased">
+
+    <!-- Container -->
+    <div class="container mx-auto max-w-4xl px-6 py-12 md:py-20">
+
+        <!-- Header Section -->
+        <header class="flex flex-col md:flex-row items-start md:items-center justify-between">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white">Lily Yang</h1>
+                <p class="mt-2 text-lg md:text-xl font-medium gradient-text">UC Berkeley Engineering Mathematics & Statistics</p>
+                <p class="mt-4 max-w-md text-gray-400">
+                    Aspiring software engineer with a passion for building interactive applications and solving complex problems through code.
+                </p>
+            </div>
+            <!-- Social Links -->
+            <div class="mt-6 md:mt-0 flex space-x-4">
+                <a href="https://github.com/ReneesmeS" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/lily-yang-625356384" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <!-- You can add a link to your resume PDF here -->
+                <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- Projects Section -->
+        <main class="mt-16 md:mt-20">
+            <h2 class="text-3xl font-bold text-white mb-8">Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project Card: Gridfall -->
+                <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-white">Gridfall: A Tactical Roguelike Card Game</h3>
+                    <p class="text-gray-400 mt-2 flex-grow">
+                        Gridfall is a tactical roguelike card game I developed from scratch, combining deck-building mechanics with real-time strategy on a grid-based battlefield. As an engineering mathematics student at Berkeley, I implemented advanced algorithms including A* pathfinding for enemy AI and personality-based decision-making systems. The project challenged me to balance complex game mechanics while ensuring smooth browser performance.
+                    </p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">JavaScript</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">HTML5</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">CSS</span>
+                    </div>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="https://card-game-mcdl.onrender.com/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-indigo-600 text-white font-semibold text-sm rounded-md hover:bg-indigo-500 transition-colors duration-300">Play Game</a>
+                        <button onclick="openModal('gridfall')" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project Card: Ultra Ordem -->
+                <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-white">Ultra Ordem: Multiplayer Card Game Platform</h3>
+                    <p class="text-gray-400 mt-2 flex-grow">
+                        Ultra Ordem is a browser-based multiplayer card game platform I created to address the inconvenience of forgetting physical cards during travel. Initially designed for family use, it evolved into a comprehensive platform supporting Texas Hold'em and Zheng Shang You. I utilized Socket.IO for real-time communication, learning to manage multiplayer game states and synchronization across multiple players.
+                    </p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">JavaScript</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Node.js</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Socket.IO</span>
+                    </div>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="https://ultraordem.onrender.com/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-indigo-600 text-white font-semibold text-sm rounded-md hover:bg-indigo-500 transition-colors duration-300">Play Games</a>
+                        <button onclick="openModal('ultra-ordem')" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project Card: Book Recommendation System -->
+                <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-white">Book Recommendation System using Naïve Bayes Classifier</h3>
+                    <p class="text-gray-400 mt-2 flex-grow">
+                        For this independent research project, I developed a book recommendation system using Naïve Bayes classification. The work involved comparing content-based and collaborative filtering approaches, analyzing their respective advantages and limitations. This project provided valuable insight into applying probabilistic models to recommendation systems and strengthened my understanding of machine learning fundamentals.
+                    </p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Python</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Machine Learning</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Data Analysis</span>
+                    </div>
+                    <div class="mt-6 flex space-x-4">
+                        <button onclick="openModal('book-rec')" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project Card: Python Ebook Utilities -->
+                <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-white">Python Ebook Processing Utilities</h3>
+                    <p class="text-gray-400 mt-2 flex-grow">
+                        I developed a suite of Python utilities for personal ebook management, addressing practical needs in digital reading and audio consumption. The tools include text-to-EPUB conversion with automatic chapter detection and text-to-speech conversion optimized for audiobook listening during commutes. These projects demonstrate practical application of text processing, file format manipulation, and audio generation using Python libraries. Later, I deployed these utilities as a web service for easier access.
+                    </p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Python</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Text Processing</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Audio Processing</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Flask</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Web Deployment</span>
+                    </div>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="https://toolbox-9y5i.onrender.com/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-indigo-600 text-white font-semibold text-sm rounded-md hover:bg-indigo-500 transition-colors duration-300">Visit Web Service</a>
+                        <button onclick="openModal('ebook-utils')" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- Project Card: 3D Bin Packing Problem -->
+                <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-white">3D Bin Packing Algorithm for Express Delivery</h3>
+                    <p class="text-gray-400 mt-2 flex-grow">
+                        I conducted research on the three-dimensional bin packing problem for express delivery logistics under the supervision of a professor at Fudan University. Using Satisfiability Modulo Theories (SMT), I developed an algorithm that achieved a 5% efficiency improvement over existing heuristic methods. This work deepened my understanding of constraint solving and optimization in practical applications.
+                    </p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Algorithm Design</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Optimization</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Research</span>
+                    </div>
+                    <div class="mt-6 flex space-x-4">
+                        <button onclick="openModal('bin-packing')" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project Card: Traveling Salesman Problem -->
+                <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-white">Optimized Route Planning Algorithm</h3>
+                    <p class="text-gray-400 mt-2 flex-grow">
+                        During the COVID-19 lockdown, I optimized delivery routes for a local bakery using graph theory algorithms. Beginning with Depth-First Search, I progressed to Branch and Bound with greedy heuristics for improved solutions. This project demonstrated the practical application of algorithmic optimization and provided tangible benefits to the community.
+                    </p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Graph Theory</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Algorithm Optimization</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Python</span>
+                    </div>
+                    <div class="mt-6 flex space-x-4">
+                        <button onclick="openModal('tsp')" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Details</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-20">
+            <p class="text-gray-500">&copy; 2025 Lily Yang. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-gray-800 rounded-lg p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-title" class="text-xl font-semibold text-white"></h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-white">&times;</button>
+            </div>
+            <div id="modal-content" class="text-gray-300"></div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(project) {
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            if (project === 'gridfall') {
+                title.textContent = 'Gridfall: Technical Development and Learning Outcomes';
+                content.innerHTML = `
+                    <p class="mb-4">Developing Gridfall represented a significant milestone in my programming education. Starting from basic JavaScript concepts, I progressed to architecting a complete game system with a 3-phase turn structure and real-time action phases, which required careful management of state and timing.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>Card Effects Engine:</strong> I designed a system supporting 25+ effect types, including damage, healing, and status applications, learning the complexities of system interactions and modularity.</li>
+                        <li><strong>Enemy AI Implementation:</strong> The integration of A* pathfinding with personality-based decision-making (berserk, tactical, etc.) enhanced gameplay depth and taught me about algorithmic decision-making.</li>
+                        <li><strong>Performance Optimization:</strong> Ensuring smooth browser performance for procedural generation and real-time updates improved my understanding of JavaScript efficiency and resource management.</li>
+                        <li><strong>User Interface Design:</strong> Creating an intuitive card management and status tracking system emphasized the importance of user experience in interactive applications.</li>
+                    </ul>
+                    <p class="mb-4">The most challenging aspect was debugging complex status effect interactions, which ultimately strengthened my analytical skills. This project demonstrated my ability to manage large-scale software projects and reinforced my passion for combining mathematical algorithms with interactive design.</p>
+                    <p><strong>Key Learning Outcomes:</strong> Enhanced proficiency in algorithm implementation, system architecture, and the integration of mathematical concepts in software development.</p>
+                `;
+            } else if (project === 'ultra-ordem') {
+                title.textContent = 'Ultra Ordem: Multiplayer Platform Development';
+                content.innerHTML = `
+                    <p class="mb-4">Ultra Ordem originated from a practical need and evolved into a functional multiplayer platform. This project introduced me to real-time web technologies and the challenges of multiplayer game development.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>Real-Time Communication:</strong> Implementing Socket.IO for connection management and game state synchronization across multiple players provided insight into asynchronous programming and network reliability.</li>
+                        <li><strong>Full-Stack Architecture:</strong> Developing both client and server components with Node.js and Express demonstrated the importance of cohesive system design and deployment considerations.</li>
+                        <li><strong>Game Logic Translation:</strong> Converting complex card game rules (Texas Hold'em betting, Zheng Shang You combinations) into code required careful algorithmic thinking and edge case handling.</li>
+                        <li><strong>User-Centered Design:</strong> Prioritizing an ad-free experience and intuitive room sharing highlighted the value of accessibility in user adoption.</li>
+                    </ul>
+                    <p class="mb-4">Observing actual user engagement validated the project's evolution from a personal tool to a community resource. This experience taught me the significance of user feedback in iterative development.</p>
+                    <p><strong>Key Learning Outcomes:</strong> Proficiency in real-time web technologies, full-stack development practices, and the importance of user experience in application design.</p>
+                `;
+            } else if (project === 'book-rec') {
+                title.textContent = 'Book Recommendation System: Machine Learning Implementation';
+                content.innerHTML = `
+                    <p class="mb-4">This independent research project marked my initial exploration into machine learning applications. Implementing Naïve Bayes classification for book recommendations provided practical experience with probabilistic modeling.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>Naïve Bayes Classifier:</strong> Building the algorithm from fundamentals enhanced my understanding of conditional probabilities and feature engineering.</li>
+                        <li><strong>Comparative Analysis:</strong> Evaluating content-based versus collaborative filtering revealed the trade-offs between predictability and serendipity in recommendation systems.</li>
+                        <li><strong>Evaluation Methodology:</strong> Developing systematic approaches to measure and compare recommendation accuracy strengthened my analytical skills.</li>
+                    </ul>
+                    <p>This project solidified my foundation in machine learning and demonstrated the practical application of statistical methods in real-world problems.</p>
+                `;
+            } else if (project === 'ebook-utils') {
+                title.textContent = 'Python Ebook Processing Utilities: From Command-Line to Web Service';
+                content.innerHTML = `
+                    <p class="mb-4">These personal utilities were developed to solve specific needs in digital content consumption, demonstrating practical Python programming for everyday applications. Starting as command-line tools, they evolved into a full web service for broader accessibility.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>TXT to EPUB Converter:</strong> Automated conversion of plain text files to EPUB format with intelligent chapter detection and formatting, using libraries like ebooklib for structured ebook creation.</li>
+                        <li><strong>Text-to-Speech for Ebooks:</strong> Specialized audio conversion tool optimized for long-form content, implementing text preprocessing and audio generation using TTS libraries to create listenable audiobooks.</li>
+                        <li><strong>Text Processing Algorithms:</strong> Developed custom parsing logic for chapter identification, text cleaning, and format optimization, enhancing my skills in string manipulation and file I/O.</li>
+                        <li><strong>Audio Optimization:</strong> Fine-tuned audio parameters for commuting scenarios, considering factors like speech rate, clarity, and file size efficiency.</li>
+                        <li><strong>Web Service Deployment:</strong> Extended the utilities into a Flask-based web application deployed on Render, providing a user-friendly interface for file uploads, processing, and downloads without requiring local installation.</li>
+                        <li><strong>Cross-Platform Accessibility:</strong> Made the tools available online, allowing access from any device with a web browser, significantly improving usability and reach.</li>
+                    </ul>
+                    <p class="mb-4">These tools evolved from personal necessity into robust utilities, teaching me about user-centered software design and the practical application of programming skills to daily life. The web deployment phase introduced me to web development, deployment pipelines, and making technical tools accessible to non-technical users.</p>
+                    <p><strong>Key Learning Outcomes:</strong> Proficiency in text processing, audio manipulation, web development with Flask, deployment on cloud platforms, and creating user-friendly interfaces for complex tools.</p>
+                `;
+            } else if (project === 'bin-packing') {
+                title.textContent = '3D Bin Packing: Optimization Research';
+                content.innerHTML = `
+                    <p class="mb-4">My research on three-dimensional bin packing under academic supervision explored advanced optimization techniques in logistics. The use of Satisfiability Modulo Theories represented a novel approach to constraint solving.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>SMT Implementation:</strong> Applying constraint solvers to spatial optimization problems deepened my understanding of mathematical modeling techniques.</li>
+                        <li><strong>Efficiency Improvements:</strong> Achieving measurable gains over heuristic methods validated the potential of algorithmic innovation.</li>
+                        <li><strong>Research Methodology:</strong> Following rigorous academic processes prepared me for advanced research environments.</li>
+                    </ul>
+                    <p>This work enhanced my appreciation for the intersection of theoretical computer science and practical optimization challenges.</p>
+                `;
+            } else if (project === 'tsp') {
+                title.textContent = 'Traveling Salesman Problem: Algorithmic Application';
+                content.innerHTML = `
+                    <p class="mb-4">Optimizing bakery delivery routes during the COVID-19 lockdown provided a concrete application of graph theory algorithms. The progression from basic search methods to advanced heuristics demonstrated algorithmic evolution.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>Algorithm Refinement:</strong> Transitioning from Depth-First Search to Branch and Bound with heuristics illustrated the importance of algorithmic trade-offs.</li>
+                        <li><strong>Graph Modeling:</strong> Translating real-world delivery networks into mathematical graphs required both technical and domain knowledge.</li>
+                        <li><strong>Practical Impact:</strong> Observing tangible efficiency improvements reinforced the value of theoretical computer science in community applications.</li>
+                    </ul>
+                    <p>This project underscored the importance of adapting mathematical concepts to solve real-world optimization problems.</p>
+                `;
+            }
+            
+            modal.classList.remove('hidden');
+        }
+        
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
