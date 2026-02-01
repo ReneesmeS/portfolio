@@ -72,7 +72,7 @@
                 <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
                     <h3 class="text-xl font-semibold text-white">Gridfall: A Tactical Roguelike Card Game</h3>
                     <p class="text-gray-400 mt-2 flex-grow">
-                        A tactical roguelike developed from scratch, combining deck-building mechanics with grid-based strategy. Implemented A* pathfinding for enemy AI and personality-based decision-making systems.
+                        A browser-based tactical roguelike that integrates deck construction with grid-based combat. Features a modular engine, deterministic reward systems, and A* pathfinding with personality-driven enemy behavior.
                     </p>
                     <div class="mt-4">
                         <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">JavaScript</span>
@@ -89,7 +89,7 @@
                 <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
                     <h3 class="text-xl font-semibold text-white">Ultra Ordem: Multiplayer Card Game Platform</h3>
                     <p class="text-gray-400 mt-2 flex-grow">
-                        A browser-based multiplayer card game platform supporting Texas Hold'em and Zheng Shang You. Utilized Socket.IO for real-time, event-based communication to manage multiplayer game states.
+                        A browser-based platform for synchronous multiplayer card games (Texas Hold’em and Zheng Shang You) with server-authoritative adjudication and low-latency state synchronization via Socket.IO.
                     </p>
                     <div class="mt-4">
                         <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">JavaScript</span>
@@ -102,28 +102,11 @@
                     </div>
                 </div>
 
-                <!-- Project Card: Book Recommendation System -->
-                <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-white">Book Recommendation System using Naïve Bayes Classifier</h3>
-                    <p class="text-gray-400 mt-2 flex-grow">
-                        An independent research project developing a book recommendation system from scratch. Implemented and compared content-based and collaborative filtering approaches to analyze their respective trade-offs.
-                    </p>
-                    <div class="mt-4">
-                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Python</span>
-                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Machine Learning</span>
-                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Data Analysis</span>
-                    </div>
-                    <div class="mt-6 flex space-x-4">
-                        <!--<a href="https://github.com/ReneesmeS/Book-Recommendation-System" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Code</a>-->
-                        <button onclick="openModal('book-rec')" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Details</button>
-                    </div>
-                </div>
-
                 <!-- Project Card: Toolbox -->
                 <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
                     <h3 class="text-xl font-semibold text-white">Toolbox: Ebook Utilities + Math OCR (Web Service)</h3>
                     <p class="text-gray-400 mt-2 flex-grow">
-                        Born from my love of reading and learning math, this project evolved from CLI scripts into a Render-hosted web service. It converts TXT to EPUB with chapter detection, generates audiobooks from long-form text, and now adds a math formula OCR that turns equations into LaTeX—perfect for notes and homework.
+                        A Flask-based document toolbox that converts ebooks, generates chapter-aware audiobooks, and performs math-formula OCR to LaTeX with resource-aware ML integration and production deployment controls.
                     </p>
                     <div class="mt-4">
                         <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Python</span>
@@ -137,12 +120,63 @@
                         <button onclick="openModal('ebook-utils')" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Details</button>
                     </div>
                 </div>
+
+                <!-- Project Card: Gemini Export Tool -->
+                <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-white">Gemini Chat Exporter: Markdown & Word</h3>
+                    <p class="text-gray-400 mt-2 flex-grow">
+                        A Manifest V3 Chrome extension that extracts Gemini conversations and exports them to Markdown and Word with high-fidelity formatting, including KaTeX-aware math and table preservation.
+                    </p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">JavaScript</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Chrome Extension</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Document Generation</span>
+                    </div>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="https://github.com/ReneesmeS/gemini-chat-exporter-math" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-indigo-600 text-white font-semibold text-sm rounded-md hover:bg-indigo-500 transition-colors duration-300">View Code</a>
+                        <button onclick="openModal('gemini-export')" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project Card: Book Recommendation System -->
+                <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-white">Book Recommendation System using Naïve Bayes Classifier</h3>
+                    <p class="text-gray-400 mt-2 flex-grow">
+                        An independent research project implementing a Naïve Bayes recommender and comparing content-based and collaborative filtering methods to evaluate precision and coverage trade-offs.
+                    </p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Python</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Machine Learning</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Data Analysis</span>
+                    </div>
+                    <div class="mt-6 flex space-x-4">
+                        <!--<a href="https://github.com/ReneesmeS/Book-Recommendation-System" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Code</a>-->
+                        <button onclick="openModal('book-rec')" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project Card: Level Up J -->
+                <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-white">Level Up J: Offline-First Study PWA</h3>
+                    <p class="text-gray-400 mt-2 flex-grow">
+                        A local-first PWA that converts focused time into progression, XP, and rewards. Includes offline support, anti-cheat focus mode, and data-driven loot mechanics.
+                    </p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">JavaScript</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">PWA</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Offline-First</span>
+                    </div>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="http://fandasoft.com/levelupj" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-indigo-600 text-white font-semibold text-sm rounded-md hover:bg-indigo-500 transition-colors duration-300">Open App</a>
+                        <button onclick="openModal('level-up-j')" class="px-4 py-2 bg-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-600 transition-colors duration-300">View Details</button>
+                    </div>
+                </div>
                 
                 <!-- Project Card: 3D Bin Packing Problem -->
                 <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
                     <h3 class="text-xl font-semibold text-white">3D Bin Packing Algorithm for Express Delivery</h3>
                     <p class="text-gray-400 mt-2 flex-grow">
-                       Academic research focused on optimizing logistics for express delivery. Developed an algorithm using Satisfiability Modulo Theories (SMT) that achieved a 5% efficiency improvement over existing heuristic methods.
+                              Academic research on logistics optimization using Satisfiability Modulo Theories (SMT), achieving a 5% average improvement in packing efficiency over baseline heuristics.
                     </p>
                     <div class="mt-4">
                         <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Algorithm Design</span>
@@ -158,7 +192,7 @@
                 <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
                     <h3 class="text-xl font-semibold text-white">Route Optimization for Local Logistics</h3>
                     <p class="text-gray-400 mt-2 flex-grow">
-                        Applied graph theory to optimize delivery routes for a local bakery during COVID-19 lockdown. Progressed from Depth-First Search to a more efficient Branch and Bound algorithm with greedy heuristics.
+                        Applied graph-theoretic modeling to optimize delivery routes, progressing from DFS to Branch and Bound with greedy heuristics for improved solution quality and runtime.
                     </p>
                     <div class="mt-4">
                         <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">Graph Theory</span>
@@ -175,7 +209,7 @@
                 <div class="bg-gray-800 rounded-lg p-6 flex flex-col hover:shadow-xl hover:shadow-indigo-500/10 transition-shadow duration-300">
                     <h3 class="text-xl font-semibold text-white">C++ RPG/Strategy Game (WIP, 50k+ LOC)</h3>
                     <p class="text-gray-400 mt-2 flex-grow">
-                        A from-scratch, systems-driven game in C++ exploring combat, spells, buffs/debuffs, and progression. Math-based attributes and damage, adventure mode with loot/XP, training pagoda for learning spells, and an alchemy/inventory system. Currently runs in my development environment.
+                        A systems-driven C++ game exploring combat, spells, and progression with math-based attributes, loot/XP loops, and an alchemy-driven inventory system. Currently runs in a local development environment.
                     </p>
                     <div class="mt-4">
                         <span class="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-1 rounded-full">C++</span>
@@ -213,7 +247,7 @@
             'gridfall': {
                 title: 'Gridfall: Tactical Roguelike Game',
                 content: `
-                    <p>Gridfall is a browser-based strategy game built from the ground up in vanilla JavaScript. The project's goal was to apply mathematical concepts to create complex game mechanics, including procedural generation and intelligent enemy AI.</p>
+                    <p>Gridfall is a browser-based tactical game built in vanilla JavaScript to explore deterministic systems design, procedural generation, and adversarial AI within a grid-based combat model.</p>
                     <h4 class="font-semibold text-white mt-4 mb-2">Technical Implementation:</h4>
                     <ul class="list-disc list-inside space-y-1">
                         <li><b>Game Engine:</b> Architected a custom game loop using HTML5 Canvas for rendering and state management, handling a 3-phase turn structure (planning, action, resolution).</li>
@@ -228,7 +262,7 @@
             'ultra-ordem': {
                 title: 'Ultra Ordem: Real-Time Multiplayer Platform',
                 content: `
-                    <p>Ultra Ordem was developed to provide a seamless, ad-free multiplayer card game experience accessible from any browser. The core of this project involved solving the challenges of real-time state synchronization for multiple concurrent users.</p>
+                    <p>Ultra Ordem is a real-time multiplayer card platform that prioritizes deterministic server-side adjudication and low-latency synchronization across concurrent rooms.</p>
                     <h4 class="font-semibold text-white mt-4 mb-2">Technical Implementation:</h4>
                     <ul class="list-disc list-inside space-y-1">
                         <li><b>Real-Time Communication:</b> Utilized Socket.IO and a Node.js/Express backend to establish persistent, low-latency WebSocket connections between clients and the server.</li>
@@ -243,7 +277,7 @@
             'book-rec': {
                 title: 'Book Recommendation System: Applied Machine Learning',
                 content: `
-                    <p>This research project was a practical application of my statistical coursework, focused on building and evaluating a recommendation model using the Naïve Bayes classification algorithm. The goal was to understand the mathematical foundations of common recommendation techniques.</p>
+                    <p>This research project applied statistical learning to evaluate recommendation strategies using a Naïve Bayes classifier and comparative filtering approaches.</p>
                     <h4 class="font-semibold text-white mt-4 mb-2">Methodology:</h4>
                     <ul class="list-disc list-inside space-y-1">
                         <li><b>Algorithm Implementation:</b> Built a Naïve Bayes classifier from scratch in Python, calculating probabilities based on book genres and user ratings to predict user preferences.</li>
@@ -262,7 +296,7 @@
             'ebook-utils': {
                 title: 'Toolbox: From CLI Utilities to a Web Service with Math OCR',
                 content: `
-                    <p>I built Toolbox because I genuinely love reading and studying math—and I kept needing better tools in my own workflow. What started as small scripts is now a web service I use every day and share with others.</p>
+                    <p>Toolbox is a Flask-based document transformation suite that integrates ebook conversion, chapter-aware text-to-speech, and math-formula OCR to LaTeX with resource-aware ML controls.</p>
                     <h4 class="font-semibold text-white mt-4 mb-2">Features & Implementation:</h4>
                     <ul class="list-disc list-inside space-y-1">
                         <li><b>TXT → EPUB Converter:</b> Parses plain text, detects chapters via regex, and assembles clean EPUBs using ebooklib, with metadata and table-of-contents support.</li>
@@ -270,14 +304,41 @@
                         <li><b>Math OCR → LaTeX (New):</b> Upload an image or scanned page and get LaTeX back. Uses OCR with math-aware preprocessing and symbol mapping to improve formula accuracy.</li>
                         <li><b>Web Service:</b> Flask backend with simple forms for uploads/options, plus download pages. Deployed on Render for easy access on any device.</li>
                     </ul>
-                    <h4 class="font-semibold text-white mt-4 mb-2">Why I built this:</h4>
-                    <p>Reading and learning are a big part of my life. I wanted audiobooks for the bus ride and well-formatted EPUBs for focused reading. The math OCR grew out of needing to quickly digitize handwritten equations into LaTeX for notes and write-ups. I’m excited by projects that remove friction and make learning smoother.</p>
                     <h4 class="font-semibold text-white mt-4 mb-2">Tech & Deployment:</h4>
                     <ul class="list-disc list-inside space-y-1">
                         <li>Python, Flask, ebooklib, TTS libraries, OCR tooling</li>
                         <li>Render deployment; containerized runtime and persistent storage for generated results</li>
                     </ul>
                     <p class="mt-2">Live: <a class="text-indigo-400 underline" href="https://toolbox-9y5i.onrender.com/" target="_blank" rel="noopener">toolbox-9y5i.onrender.com</a></p>
+                `
+            },
+            'gemini-export': {
+                title: 'Gemini Chat Exporter: Structured Document Export',
+                content: `
+                    <p>Gemini Chat Exporter is a Manifest V3 Chrome extension that extracts conversation content from the Gemini UI and produces high-fidelity exports in Markdown and Word.</p>
+                    <h4 class="font-semibold text-white mt-4 mb-2">Technical Highlights:</h4>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><b>DOM Extraction:</b> Implemented a resilient parsing pipeline that serializes headings, lists, tables, code blocks, and blockquotes.</li>
+                        <li><b>Math Preservation:</b> KaTeX-aware extraction and LaTeX normalization to maximize compatibility with Word math rendering.</li>
+                        <li><b>Exporter Architecture:</b> Modular Markdown and Word exporters with format-specific rendering and shared parsing logic.</li>
+                        <li><b>Document Generation:</b> Uses the docx library to generate structured Word documents with consistent styling.</li>
+                    </ul>
+                    <p class="mt-2">Repository: <a class="text-indigo-400 underline" href="https://github.com/ReneesmeS/gemini-chat-exporter-math" target="_blank" rel="noopener">github.com/ReneesmeS/gemini-chat-exporter-math</a></p>
+                `
+            },
+            'level-up-j': {
+                title: 'Level Up J: Offline-First Study PWA',
+                content: `
+                    <p>Level Up J is a local-first, offline-capable PWA that converts focused time into XP, coins, and collectible rewards, with persistent state stored in the browser.</p>
+                    <h4 class="font-semibold text-white mt-4 mb-2">Key Features:</h4>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><b>Session Mechanics:</b> Reward formulas based on session length and skill importance; short sessions produce no rewards.</li>
+                        <li><b>Progression Systems:</b> Leveling, XP carry-over, and gacha tickets tied to skill milestones.</li>
+                        <li><b>Offline & PWA:</b> Service worker caching, manifest configuration, and app-shell navigation for offline use.</li>
+                        <li><b>Anti-Cheat Focus Mode:</b> Auto-pauses timers when the app is backgrounded.</li>
+                        <li><b>Localization:</b> English/Chinese loot name mappings via a lightweight i18n helper.</li>
+                    </ul>
+                    <p class="mt-2">Live: <a class="text-indigo-400 underline" href="http://fandasoft.com/levelupj" target="_blank" rel="noopener">http://fandasoft.com/levelupj</a></p>
                 `
             },
             'bin-packing': {
