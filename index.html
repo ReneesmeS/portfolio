@@ -4,885 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lily Yang | Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/showcase/symbols/icon-symbol-12.png">
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0b1118;
-            --bg-alt: #111a24;
-            --surface: #152332;
-            --surface-soft: #1a2c3f;
-            --line: #2f4760;
-            --text: #e4eef8;
-            --text-muted: #9eb3c8;
-            --mint: #3ed5a3;
-            --amber: #f2b563;
-            --danger: #f37a80;
-            --shadow: #061018cc;
-            --radius: 16px;
-            --radius-sm: 12px;
-            --max-width: 1120px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: "Space Grotesk", "Segoe UI", sans-serif;
-            color: var(--text);
-            background:
-                radial-gradient(1100px 700px at 8% -15%, #2a455f 0%, #0b1118 55%),
-                radial-gradient(900px 600px at 105% 0%, #2f3d2f 0%, #0b1118 60%),
-                var(--bg);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .backdrop {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .backdrop::before,
-        .backdrop::after {
-            content: "";
-            position: absolute;
-            border-radius: 9999px;
-            filter: blur(2px);
-            animation: drift 16s ease-in-out infinite;
-        }
-
-        .backdrop::before {
-            width: 280px;
-            height: 280px;
-            background: radial-gradient(circle, #3ed5a344 0%, #00000000 72%);
-            top: 8%;
-            right: -70px;
-        }
-
-        .backdrop::after {
-            width: 340px;
-            height: 340px;
-            background: radial-gradient(circle, #f2b5632f 0%, #00000000 70%);
-            left: -100px;
-            bottom: -60px;
-            animation-delay: 3s;
-        }
-
-        .grid-lines {
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(#7ea6ca14 1px, transparent 1px),
-                linear-gradient(90deg, #7ea6ca14 1px, transparent 1px);
-            background-size: 42px 42px;
-            opacity: 0.8;
-        }
-
-        @keyframes drift {
-            0%,
-            100% { transform: translateY(0) translateX(0); }
-            50% { transform: translateY(-14px) translateX(8px); }
-        }
-
-        @keyframes riseIn {
-            0% {
-                opacity: 0;
-                transform: translateY(16px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .page {
-            position: relative;
-            z-index: 1;
-            width: min(var(--max-width), calc(100% - 2rem));
-            margin: 0 auto;
-            padding: 2.2rem 0 4rem;
-        }
-
-        .panel {
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            background: linear-gradient(145deg, #152332d9 0%, #122130f2 100%);
-            box-shadow: 0 20px 50px -34px var(--shadow);
-            backdrop-filter: blur(6px);
-        }
-
-        .topbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 0.95rem 1.1rem;
-            margin-bottom: 1.25rem;
-            animation: riseIn 0.45s ease both;
-        }
-
-        .tag {
-            font-family: "IBM Plex Mono", monospace;
-            font-size: 0.78rem;
-            letter-spacing: 0.04em;
-            color: var(--mint);
-            text-transform: uppercase;
-        }
-
-        .top-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.55rem;
-        }
-
-        .chip-link {
-            text-decoration: none;
-            color: var(--text);
-            border: 1px solid var(--line);
-            border-radius: 9999px;
-            background: #17283a;
-            padding: 0.4rem 0.8rem;
-            font-size: 0.84rem;
-            transition: 0.2s ease;
-        }
-
-        .chip-link:hover {
-            border-color: #4d6f8f;
-            background: #1f3349;
-            transform: translateY(-1px);
-        }
-
-        .hero {
-            padding: 2.1rem;
-            animation: riseIn 0.55s ease both;
-            animation-delay: 0.06s;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            margin: 0;
-            max-width: 760px;
-            line-height: 1.65;
-            font-size: 1.02rem;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: clamp(2rem, 3.7vw, 3.6rem);
-            line-height: 1.05;
-            letter-spacing: -0.01em;
-        }
-
-        .subtitle {
-            margin-top: 0.8rem;
-            margin-bottom: 1rem;
-            font-size: clamp(1rem, 2vw, 1.28rem);
-            color: #b9d2ea;
-            font-weight: 500;
-        }
-
-        .accent {
-            color: var(--mint);
-        }
-
-        .cta-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 1.35rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.35rem;
-            border-radius: 999px;
-            border: 1px solid transparent;
-            padding: 0.6rem 1rem;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.2s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(120deg, #2bc594 0%, #1fa97d 100%);
-            color: #052016;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-1px);
-            filter: brightness(1.06);
-        }
-
-        .btn-secondary {
-            border-color: #426482;
-            color: var(--text);
-            background: #1a2b3d;
-        }
-
-        .btn-secondary:hover {
-            background: #21384f;
-            border-color: #567b9d;
-        }
-
-        .quick-stats {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.9rem;
-            margin-top: 1rem;
-            animation: riseIn 0.6s ease both;
-            animation-delay: 0.12s;
-        }
-
-        .stat-card {
-            padding: 1rem;
-        }
-
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #eaf4ff;
-            margin: 0;
-        }
-
-        .stat-label {
-            margin: 0.2rem 0 0;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .section {
-            margin-top: 1.2rem;
-            padding: 1.4rem;
-            animation: riseIn 0.65s ease both;
-            animation-delay: 0.18s;
-        }
-
-        .section-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            margin: 0;
-            font-size: clamp(1.3rem, 2.1vw, 1.85rem);
-            letter-spacing: -0.01em;
-        }
-
-        .section-head p {
-            margin: 0;
-            color: var(--text-muted);
-            max-width: 720px;
-        }
-
-        .filter-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .filter-btn {
-            font-family: "IBM Plex Mono", monospace;
-            font-size: 0.8rem;
-            border-radius: 999px;
-            border: 1px solid #3b5874;
-            color: #cce0f4;
-            background: #152636;
-            padding: 0.4rem 0.75rem;
-            cursor: pointer;
-            transition: 0.2s ease;
-        }
-
-        .filter-btn:hover {
-            border-color: #5a7f9f;
-            background: #1a3146;
-        }
-
-        .filter-btn.active {
-            background: #2f4f69;
-            border-color: #7eb2de;
-            color: #f3f9ff;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.9rem;
-        }
-
-        .project-card {
-            padding: 1rem;
-            border: 1px solid var(--line);
-            border-radius: var(--radius-sm);
-            background: linear-gradient(145deg, #152434ef 0%, #132131f8 100%);
-            display: flex;
-            flex-direction: column;
-            gap: 0.7rem;
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-2px);
-            border-color: #4f7597;
-            box-shadow: 0 14px 30px -22px #26425ecc;
-        }
-
-        .project-top {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 0.5rem;
-        }
-
-        .project-title {
-            margin: 0;
-            font-size: 1.08rem;
-            line-height: 1.25;
-        }
-
-        .project-kind {
-            font-family: "IBM Plex Mono", monospace;
-            font-size: 0.72rem;
-            border-radius: 999px;
-            padding: 0.2rem 0.55rem;
-            border: 1px solid #486788;
-            color: #cbe1f7;
-            white-space: nowrap;
-            text-transform: uppercase;
-        }
-
-        .summary {
-            margin: 0;
-            color: var(--text-muted);
-            line-height: 1.55;
-            font-size: 0.95rem;
-            min-height: 4.6em;
-        }
-
-        .stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-        }
-
-        .stack span {
-            font-family: "IBM Plex Mono", monospace;
-            font-size: 0.74rem;
-            border-radius: 7px;
-            background: #1d3044;
-            border: 1px solid #3c5873;
-            color: #d4e6f8;
-            padding: 0.2rem 0.45rem;
-        }
-
-        .project-actions {
-            margin-top: auto;
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .artifact-row {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 0.9rem;
-        }
-
-        .artifact-card {
-            border: 1px solid var(--line);
-            border-radius: var(--radius-sm);
-            background: linear-gradient(145deg, #152434ef 0%, #132131f8 100%);
-            padding: 0.9rem;
-            display: flex;
-            flex-direction: column;
-            min-height: 320px;
-        }
-
-        .artifact-title {
-            margin: 0;
-            font-size: 0.96rem;
-            color: #e6f2ff;
-        }
-
-        .artifact-caption {
-            margin: 0.35rem 0 0.6rem;
-            color: var(--text-muted);
-            font-size: 0.86rem;
-            line-height: 1.45;
-        }
-
-        .artifact-viewport {
-            width: 100%;
-            min-height: 220px;
-            display: grid;
-            place-items: center;
-            border-radius: 10px;
-            border: 1px solid #3f5a74;
-            background: #0c1826;
-            overflow: hidden;
-            margin-top: auto;
-        }
-
-        .monster-stage img,
-        .icon-stage img {
-            max-width: 100%;
-            max-height: 260px;
-            object-fit: contain;
-            image-rendering: pixelated;
-        }
-
-        .symbol-canvas-wrap {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            border: 1px solid #3f5a74;
-            border-radius: 10px;
-            overflow: hidden;
-            background: #09111d;
-            display: grid;
-            place-items: center;
-        }
-
-        #symbol-crop-canvas {
-            width: 100%;
-            height: 100%;
-            display: block;
-            image-rendering: pixelated;
-        }
-
-        .sprite-swarm-stage {
-            width: 100%;
-            height: 220px;
-            border-radius: 10px;
-            background: linear-gradient(180deg, #13273a, #0d1d2d 65%);
-            border: 1px solid #3f5a74;
-            display: grid;
-            place-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sprite-swarm-stage::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 22px;
-            height: 2px;
-            background: #6284a6;
-            opacity: 0.5;
-        }
-
-        .sprite-swarm-track {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-            gap: 0.35rem;
-            align-items: end;
-            padding: 0 0.35rem;
-        }
-
-        .sprite-actor {
-            width: 32px;
-            height: 48px;
-            margin: 0 auto;
-            background-repeat: no-repeat;
-            background-size: 352px 5664px;
-            image-rendering: pixelated;
-            transform: translateY(-8px);
-        }
-
-        .sprite-source {
-            margin-top: 0.45rem;
-            font-size: 0.78rem;
-            color: #a7bfd7;
-            text-align: center;
-        }
-
-        .mini-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9px;
-            border: 1px solid #44607d;
-            background: #1a2f44;
-            color: #ecf5ff;
-            text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 600;
-            padding: 0.45rem 0.68rem;
-            cursor: pointer;
-            transition: 0.2s ease;
-        }
-
-        .mini-btn:hover {
-            background: #23405a;
-            border-color: #668cad;
-        }
-
-        .mini-btn.primary {
-            background: #2ec495;
-            color: #042116;
-            border-color: #32cd9c;
-        }
-
-        .mini-btn.primary:hover {
-            background: #39d6a4;
-        }
-
-        .insights {
-            margin-top: 1rem;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.8rem;
-        }
-
-        .insight {
-            padding: 0.95rem;
-        }
-
-        .insight h3 {
-            margin: 0;
-            font-size: 1rem;
-            color: #eaf4ff;
-        }
-
-        .insight p {
-            margin: 0.35rem 0 0;
-            color: var(--text-muted);
-            line-height: 1.5;
-            font-size: 0.92rem;
-        }
-
-        footer {
-            margin-top: 1.3rem;
-            padding: 1rem 0.3rem 0;
-            color: #8fa6bc;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 0.7rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #b8d2e9;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: #e8f4ff;
-            text-decoration: underline;
-        }
-
-        .modal {
-            position: fixed;
-            inset: 0;
-            z-index: 20;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            background: #04090fcc;
-        }
-
-        .modal.open {
-            display: flex;
-        }
-
-        .modal-inner {
-            width: min(760px, 100%);
-            max-height: 90vh;
-            overflow: auto;
-            border: 1px solid #3f5e79;
-            border-radius: var(--radius);
-            background: linear-gradient(150deg, #132332fc 0%, #101e2afc 100%);
-            box-shadow: 0 18px 42px -24px #050f18;
-            padding: 1.2rem;
-        }
-
-        .modal-top {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 0.8rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .modal h3 {
-            margin: 0;
-            font-size: 1.28rem;
-        }
-
-        .close {
-            border: 1px solid #4a6884;
-            background: #173046;
-            color: #dbebfb;
-            border-radius: 8px;
-            width: 34px;
-            height: 34px;
-            cursor: pointer;
-        }
-
-        .close:hover {
-            background: #214460;
-        }
-
-        .modal p,
-        .modal li {
-            color: #b8cde0;
-            line-height: 1.6;
-        }
-
-        .modal ul {
-            margin: 0.55rem 0 0.7rem;
-            padding-left: 1.15rem;
-        }
-
-        .modal h4 {
-            margin: 0.8rem 0 0.25rem;
-            color: #f0f7ff;
-        }
-
-        @media (max-width: 980px) {
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .artifact-row {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .sprite-swarm-track {
-                grid-template-columns: repeat(5, minmax(0, 1fr));
-            }
-
-            .quick-stats,
-            .insights {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .page {
-                width: min(var(--max-width), calc(100% - 1.2rem));
-                padding-top: 1rem;
-                padding-bottom: 2.5rem;
-            }
-
-            .topbar,
-            .hero,
-            .section {
-                padding: 1rem;
-            }
-
-            .hero p {
-                font-size: 0.97rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .summary {
-                min-height: auto;
-            }
-
-            .artifact-row {
-                grid-template-columns: 1fr;
-            }
-
-            .sprite-swarm-track {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/classic.css">
+    <link rel="stylesheet" href="assets/css/beta.css">
 </head>
-<body>
+<body class="mode-classic">
     <div class="backdrop" aria-hidden="true">
         <div class="grid-lines"></div>
     </div>
 
     <div class="page">
-        <header class="topbar panel">
+        <header id="classic-header" class="topbar panel">
             <div class="tag">Portfolio 2026</div>
-            <div class="top-links">
-                <a class="chip-link" href="https://github.com/ReneesmeS" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a class="chip-link" href="https://khaki-khameleon.itch.io/" target="_blank" rel="noopener noreferrer">itch.io Profile</a>
-                <a class="chip-link" href="https://linkedin.com/in/lily-yang-625356384" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a class="chip-link" href="resume_lily.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
+            <div class="top-right">
+                <div class="top-links">
+                    <a class="chip-link" href="https://github.com/ReneesmeS" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="chip-link" href="https://khaki-khameleon.itch.io/" target="_blank" rel="noopener noreferrer">itch.io Profile</a>
+                    <a class="chip-link" href="https://linkedin.com/in/lily-yang-625356384" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a class="chip-link" href="resume_lily.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
+                </div>
+                <div class="mode-switch" role="tablist" aria-label="Portfolio view mode">
+                    <button id="mode-classic" class="mode-btn active" type="button" role="tab" aria-selected="true" data-view-mode="classic">Classic</button>
+                    <button id="mode-beta" class="mode-btn" type="button" role="tab" aria-selected="false" data-view-mode="beta">Beta Map</button>
+                </div>
             </div>
         </header>
 
-        <section class="hero panel">
-            <h1>Lily Yang</h1>
-            <div class="subtitle">Engineering Mathematics and Statistics at UC Berkeley</div>
-            <p>
-                I am an undergrad who likes building systems that are both mathematically sharp and genuinely fun to use.
-                Most of my work sits at the intersection of <span class="accent">game systems</span>, <span class="accent">algorithm design</span>,
-                and <span class="accent">full-stack product engineering</span>. I care about shipping polished builds, writing clean architecture,
-                and learning fast from real users.
-            </p>
-            <div class="cta-row">
-                <a class="btn btn-primary" href="#projects">View Project Highlights</a>
-                <a class="btn btn-secondary" href="https://khaki-khameleon.itch.io/" target="_blank" rel="noopener noreferrer">Visit itch.io Lab</a>
-                <a class="btn btn-secondary" href="https://github.com/ReneesmeS" target="_blank" rel="noopener noreferrer">Explore Repositories</a>
-                <a class="btn btn-secondary" href="resume_lily.pdf" target="_blank" rel="noopener noreferrer">Open Resume</a>
-            </div>
-        </section>
-
-        <section class="quick-stats">
-            <article class="stat-card panel">
-                <p class="stat-value" id="stat-projects">0</p>
-                <p class="stat-label">Featured projects across games, tools, and research.</p>
-            </article>
-            <article class="stat-card panel">
-                <p class="stat-value" id="stat-itch">0</p>
-                <p class="stat-label">Playable releases on itch.io with browser or download access.</p>
-            </article>
-            <article class="stat-card panel">
-                <p class="stat-value" id="stat-research">0</p>
-                <p class="stat-label">Research-heavy projects applying algorithms to practical problems.</p>
-            </article>
-        </section>
-
-        <section class="section panel">
-            <div class="section-head">
-                <div>
-                    <h2>Live Artifact Showcase</h2>
-                    <p>
-                        Generated artifacts and in-game sprite sheets from Pixel Monster Maker, Symbol Generator, Ever Evil, and Capel Captain.
-                    </p>
+        <main id="classic-view" class="view-section">
+            <section class="hero panel">
+                <h1>Lily Yang</h1>
+                <div class="subtitle">Engineering Mathematics and Statistics at UC Berkeley</div>
+                <p>
+                    I am an undergrad who likes building systems that are both mathematically sharp and genuinely fun to use.
+                    Most of my work sits at the intersection of <span class="accent">game systems</span>,
+                    <span class="accent">algorithm design</span>, and <span class="accent">full-stack product engineering</span>.
+                    I care about shipping polished builds, writing clean architecture, and learning fast from real users.
+                </p>
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="#projects">View Project Highlights</a>
+                    <a class="btn btn-secondary" href="https://khaki-khameleon.itch.io/" target="_blank" rel="noopener noreferrer">Visit itch.io Lab</a>
+                    <a class="btn btn-secondary" href="https://github.com/ReneesmeS" target="_blank" rel="noopener noreferrer">Explore Repositories</a>
+                    <a class="btn btn-secondary" href="resume_lily.pdf" target="_blank" rel="noopener noreferrer">Open Resume</a>
                 </div>
-            </div>
-            <div class="artifact-row">
-                <article class="artifact-card">
-                    <h3 class="artifact-title">4 Monster GIF Cycling</h3>
-                    <p class="artifact-caption">Source: Pixel Monster Maker</p>
-                    <div class="artifact-viewport monster-stage">
-                        <img id="monster-rotator" src="assets/showcase/monsters/1.gif" alt="Procedural pixel monster sample">
-                    </div>
+            </section>
+
+            <section class="quick-stats">
+                <article class="stat-card panel">
+                    <p class="stat-value" id="stat-projects">0</p>
+                    <p class="stat-label">Featured projects across games, tools, and research.</p>
                 </article>
-                <article class="artifact-card">
-                    <h3 class="artifact-title">24 Symbol Cycling</h3>
-                    <p class="artifact-caption">Source: Symbol Generator</p>
-                    <div class="artifact-viewport symbol-canvas-wrap">
-                        <canvas id="symbol-crop-canvas" width="500" height="500" aria-label="Random symbol crop preview"></canvas>
-                    </div>
-                    <p id="symbol-crop-label" class="artifact-caption">Loading symbol crop...</p>
+                <article class="stat-card panel">
+                    <p class="stat-value" id="stat-itch">0</p>
+                    <p class="stat-label">Playable releases on itch.io with browser or download access.</p>
                 </article>
-                <article class="artifact-card">
-                    <h3 class="artifact-title">3 Icon Cycling</h3>
-                    <p class="artifact-caption">Source: Symbol Generator</p>
-                    <div class="artifact-viewport icon-stage">
-                        <img id="icon-rotator" src="assets/showcase/symbols/icon-symbol-12.png" alt="Generated icon sample">
-                    </div>
+                <article class="stat-card panel">
+                    <p class="stat-value" id="stat-research">0</p>
+                    <p class="stat-label">Research-heavy projects applying algorithms to practical problems.</p>
                 </article>
-                <article class="artifact-card">
-                    <h3 class="artifact-title">5 Sprite Animations</h3>
-                    <p class="artifact-caption">Sources: Ever Evil, Capel Captain</p>
-                    <div class="artifact-viewport sprite-swarm-stage" aria-label="Sprite sheet animation demo">
-                        <div class="sprite-swarm-track">
-                            <div class="sprite-actor" id="sprite-actor-1" aria-hidden="true"></div>
-                            <div class="sprite-actor" id="sprite-actor-2" aria-hidden="true"></div>
-                            <div class="sprite-actor" id="sprite-actor-3" aria-hidden="true"></div>
-                            <div class="sprite-actor" id="sprite-actor-4" aria-hidden="true"></div>
-                            <div class="sprite-actor" id="sprite-actor-5" aria-hidden="true"></div>
+            </section>
+
+            <section class="section panel">
+                <div class="section-head">
+                    <div>
+                        <h2>Live Artifact Showcase</h2>
+                        <p>Generated artifacts and in-game sprite sheets from Pixel Monster Maker, Symbol Generator, Ever Evil, and Capel Captain.</p>
+                    </div>
+                </div>
+                <div class="artifact-row">
+                    <article class="artifact-card">
+                        <h3 class="artifact-title">Monster GIF Cycle (4 Variants)</h3>
+                        <p class="artifact-caption">Source: Pixel Monster Maker</p>
+                        <div class="artifact-viewport monster-stage">
+                            <img id="monster-rotator" src="assets/showcase/monsters/1.gif" alt="Rotating procedural pixel monster sprites">
                         </div>
+                    </article>
+                    <article class="artifact-card">
+                        <h3 class="artifact-title">Symbol Sheet Cycle (24 Symbols)</h3>
+                        <p class="artifact-caption">Source: Symbol Generator</p>
+                        <div class="artifact-viewport symbol-canvas-wrap">
+                            <canvas id="symbol-crop-canvas" width="500" height="500" aria-label="Symbol sheet preview"></canvas>
+                        </div>
+                    </article>
+                    <article class="artifact-card">
+                        <h3 class="artifact-title">Icon Cycle (3 Variants)</h3>
+                        <p class="artifact-caption">Source: Symbol Generator</p>
+                        <div class="artifact-viewport icon-stage">
+                            <img id="icon-rotator" src="assets/showcase/symbols/icon-symbol-12.png" alt="Rotating generated symbol icons">
+                        </div>
+                    </article>
+                    <article class="artifact-card">
+                        <h3 class="artifact-title">Sprite Animation Set (5 Actors)</h3>
+                        <p class="artifact-caption">Sources: Ever Evil, Capel Captain</p>
+                        <div class="artifact-viewport sprite-swarm-stage" aria-label="Sprite sheet animation demo">
+                            <div class="sprite-swarm-track">
+                                <div class="sprite-actor" id="sprite-actor-1" aria-hidden="true"></div>
+                                <div class="sprite-actor" id="sprite-actor-2" aria-hidden="true"></div>
+                                <div class="sprite-actor" id="sprite-actor-3" aria-hidden="true"></div>
+                                <div class="sprite-actor" id="sprite-actor-4" aria-hidden="true"></div>
+                                <div class="sprite-actor" id="sprite-actor-5" aria-hidden="true"></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="projects" class="section panel">
+                <div class="section-head">
+                    <div>
+                        <h2>Selected Projects</h2>
+                        <p>
+                            I lead these projects end-to-end: concept, architecture, implementation, testing, and deployment.
+                            Game and tool tags are separated so recruiters can quickly scan by role fit.
+                        </p>
                     </div>
-                    <div class="sprite-source">idle/run/die + weapon + fx rows</div>
-                </article>
-            </div>
-        </section>
+                    <div class="filter-row" role="group" aria-label="Project filters">
+                        <button class="filter-btn active" type="button" data-filter-target="classic" data-filter="all">All</button>
+                        <button class="filter-btn" type="button" data-filter-target="classic" data-filter="games">Games</button>
+                        <button class="filter-btn" type="button" data-filter-target="classic" data-filter="tools">Tools</button>
+                        <button class="filter-btn" type="button" data-filter-target="classic" data-filter="research">Research</button>
+                    </div>
+                </div>
+                <div id="project-grid" class="project-grid"></div>
+            </section>
 
-        <section id="projects" class="section panel">
-            <div class="section-head">
+            <section class="section panel">
+                <div class="section-head">
+                    <h2>Core Strengths</h2>
+                </div>
+                <div class="insights">
+                    <article class="insight panel">
+                        <h3>Strong Systems Thinking</h3>
+                        <p>
+                            I am comfortable breaking large, messy requirements into modular systems with explicit data contracts,
+                            deterministic behavior, and documented runtime rules.
+                        </p>
+                    </article>
+                    <article class="insight panel">
+                        <h3>Builder Mentality</h3>
+                        <p>
+                            I regularly ship playable products and usable tools, not just prototypes.
+                            I focus on usability, release workflow, and production reliability.
+                        </p>
+                    </article>
+                    <article class="insight panel">
+                        <h3>Quantitative Systems Rigor</h3>
+                        <p>
+                            Engineering math and statistics foundations show up directly in optimization,
+                            graph algorithms, procedural generation, and balancing choices across shipped projects.
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <section id="beta-view" class="beta-game view-section" hidden>
+            <header class="beta-hud">
                 <div>
-                    <h2>Selected Projects</h2>
-                    <p>
-                        I lead these projects end-to-end: concept, architecture, implementation, testing, and deployment.
-                        Game and tool tags are separated so recruiters can quickly scan by role fit.
-                    </p>
+                    <div class="beta-hud-title">LILY PORTFOLIO :: PIXEL MAP BETA</div>
+                    <div class="beta-hud-sub">Full library simulation mode</div>
                 </div>
-                <div class="filter-row" role="group" aria-label="Project filters">
-                    <button class="filter-btn active" type="button" data-filter="all">All</button>
-                    <button class="filter-btn" type="button" data-filter="games">Games</button>
-                    <button class="filter-btn" type="button" data-filter="tools">Tools</button>
-                    <button class="filter-btn" type="button" data-filter="research">Research</button>
+                <div class="beta-hud-tools">
+                    <span id="beta-coords" class="beta-hud-pill">X:0 Y:0</span>
+                    <button class="beta-switch" type="button" data-view-mode="classic" aria-selected="false">Return Classic</button>
                 </div>
-            </div>
-            <div id="project-grid" class="project-grid"></div>
-        </section>
+            </header>
 
-        <section class="section panel">
-            <div class="section-head">
-                <h2>What Recruiters Should Know</h2>
-            </div>
-            <div class="insights">
-                <article class="insight panel">
-                    <h3>Strong Systems Thinking</h3>
-                    <p>
-                        I am comfortable breaking large, messy requirements into modular systems with explicit data contracts,
-                        deterministic behavior, and documented runtime rules.
-                    </p>
-                </article>
-                <article class="insight panel">
-                    <h3>Builder Mentality</h3>
-                    <p>
-                        I regularly ship playable products and usable tools, not just prototypes. I focus on usability,
-                        release workflow, and production reliability.
-                    </p>
-                </article>
-                <article class="insight panel">
-                    <h3>Quantitative Systems Rigor</h3>
-                    <p>
-                        Engineering math and statistics foundations show up directly in optimization,
-                        graph algorithms, procedural generation, and balancing choices across shipped projects.
-                    </p>
-                </article>
+            <div class="beta-layout">
+                <section id="beta-map-shell" class="beta-map-shell" aria-label="2D pixel game map">
+                    <div id="beta-map" class="beta-map" tabindex="0" role="application" aria-label="Portfolio game map">
+                        <div id="beta-floor" class="beta-floor" aria-hidden="true"></div>
+                        <div id="beta-rug-layer" class="beta-layer beta-rug-layer" aria-hidden="true"></div>
+                        <div id="beta-furniture-layer" class="beta-layer beta-furniture-layer" aria-hidden="true"></div>
+                        <div id="beta-player" class="beta-player" aria-hidden="true">
+                            <div id="beta-player-sprite" class="beta-player-sprite"></div>
+                        </div>
+                        <div id="beta-decoration-layer" class="beta-layer beta-decoration-layer" aria-hidden="true"></div>
+                        <div id="beta-interaction-layer" class="beta-layer beta-interaction-layer"></div>
+                        <div class="beta-map-shadow" aria-hidden="true"></div>
+                    </div>
+                    <p id="beta-map-help" class="beta-map-help">Click anywhere to move. Use WASD or arrow keys for smooth movement. Press E or Enter near highlighted objects.</p>
+                </section>
+
+                <aside class="beta-window" aria-live="polite">
+                    <div class="beta-window-head">
+                        <h3 id="beta-panel-title">Overview Terminal</h3>
+                        <p id="beta-panel-sub">System status and navigation summary</p>
+                    </div>
+                    <div id="beta-panel-content" class="beta-window-body"></div>
+                </aside>
             </div>
         </section>
 
-        <footer>
+        <footer id="classic-footer">
             <div>© <span id="year"></span> Lily Yang</div>
             <div class="footer-links">
                 <a href="https://github.com/ReneesmeS" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="https://linkedin.com/in/lily-yang-625356384" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="mailto:lily.l.m.yang@gmail.com">Email</a>
+                <a href="mailto:lily.m.yang@berkeley.edu">Email</a>
             </div>
         </footer>
     </div>
@@ -897,488 +219,6 @@
         </div>
     </div>
 
-    <script>
-        const projects = [
-            {
-                id: "symbol-generator",
-                category: ["games", "tools"],
-                label: "Game + Tool",
-                title: "Procedural Symbol Generator (web + desktop)",
-                summary: "A deterministic symbol/logo generation platform with interactive evolution, topology-aware icon rendering, and a vector editor beta on top of a shared TypeScript core.",
-                stack: ["TypeScript", "React", "Tauri", "SVG", "Evolutionary Algorithms"],
-                links: [
-                    { label: "Download on itch.io", url: "https://khaki-khameleon.itch.io/procedural-symbol-generator", primary: true },
-                    { label: "Read Details", action: "modal" }
-                ],
-                details: `
-                    <p>Symbol Generator is built as a reusable architecture: one deterministic core engine, multiple runtime surfaces (web and desktop), and optional API boundaries.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Implemented seeded graph generation with symmetry controls, constraint handling, and iterative evolution workflows.</li>
-                        <li>Built icon pipeline with half-edge topology, face extraction, deterministic palette assignment, and SVG rendering.</li>
-                        <li>Developed a Vector Editor beta for direct topology edits, style controls, undo/redo, and export/import workflows.</li>
-                    </ul>
-                `
-            },
-            {
-                id: "toolbox",
-                category: ["tools"],
-                label: "Tool",
-                title: "Toolbox (ebook conversion + TTS + math OCR)",
-                summary: "A Flask web service that handles ebook conversion, chapter-aware text-to-speech, and image-to-LaTeX math OCR with deployment-safe controls.",
-                stack: ["Python", "Flask", "OCR", "LaTeX", "Deployment"],
-                links: [
-                    { label: "Open Service", url: "http://fandasoft.com/", primary: true },
-                    { label: "Read Details", action: "modal" }
-                ],
-                details: `
-                    <p>Toolbox is practical software by design: upload, process, download. I focused on reliability and clear UX across several heavy pipelines.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Built conversion pipeline supporting TXT, EPUB, HTML, and PDF with chapter parsing and metadata generation.</li>
-                        <li>Implemented chapter-aware TTS batching and archive packaging for long-form audio output.</li>
-                        <li>Integrated pix2tex-based math OCR with preprocessing and memory-aware runtime flags for constrained hosting.</li>
-                    </ul>
-                `
-            },
-            {
-                id: "capel-captain",
-                category: ["games"],
-                label: "Game",
-                title: "Capel Captain (tactical card battler)",
-                summary: "A tactical card battler designed and developed end-to-end with real-time AP simulation, Forge crafting/upgrading economy, and an Electron desktop path with Steam P2P diagnostics.",
-                stack: ["JavaScript", "HTML/CSS", "Electron", "Steamworks", "Game Systems"],
-                links: [
-                    { label: "Play Game", url: "https://reneesmes.github.io/Capel-Captain/", primary: true },
-                    { label: "Read Details", action: "modal" }
-                ],
-                details: `
-                    <p>Capel Captain is an original game project built from system design through implementation, balancing, and shipping.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Implemented real-time AP loop with continuous regen and immediate AP spend for movement, attacks, and card play.</li>
-                        <li>Added Forge systems for card crafting (fragments + gold) and per-card upgrading (chips + gold + success chance).</li>
-                        <li>Reworked survival balancing with centralized drop policy, level/turn-band enemy scaling, and nonlinear reward curves.</li>
-                        <li>Shipped shared codebase to browser + Electron desktop, with desktop Steam P2P lobby and transport diagnostics.</li>
-                    </ul>
-                `
-            },
-            {
-                id: "ultra-ordem",
-                category: ["games", "tools"],
-                label: "Game + Tool",
-                title: "Ultra Ordem (real-time multiplayer card platform)",
-                summary: "A browser-based multiplayer card platform with server-authoritative adjudication, low-latency room sync, and robust game-state handling.",
-                stack: ["Node.js", "Express", "Socket.IO", "JavaScript"],
-                links: [
-                    { label: "Play Online", url: "https://ultraordem.onrender.com/", primary: true },
-                    { label: "Read Details", action: "modal" }
-                ],
-                details: `
-                    <p>Ultra Ordem began as a family use-case and evolved into a stable browser platform for real-time multiplayer card games.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Implemented deterministic server-side rules for Texas Holdem and Zheng Shang You.</li>
-                        <li>Designed session and room state management to support concurrent games with predictable updates.</li>
-                        <li>Maintained deployed production runtime with health checks and practical ops support.</li>
-                    </ul>
-                `
-            },
-            {
-                id: "ever-evil",
-                category: ["games"],
-                label: "Game",
-                title: "Ever Evil (Rust + WASM stealth-action simulation)",
-                summary: "A systemic top-down stealth/action game with configurable fear, awareness, infamy, and law-enforcement simulation. Built in Rust with macroquad and shipped as both native and web builds.",
-                stack: ["Rust", "macroquad", "WASM", "Game AI", "Systems Design"],
-                links: [
-                    { label: "Play / Download on itch.io", url: "https://khaki-khameleon.itch.io/ever-evil", primary: true },
-                    { label: "Read Details", action: "modal" }
-                ],
-                details: `
-                    <p>Ever Evil is my most systems-heavy game build so far. The runtime models social escalation as interacting variables: spotted score, known probability, civilian fear states, awareness thresholds, and dynamic law dispatch.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Implemented deterministic formulas for infamy and identification, including weighted witness contributions and configurable scaling.</li>
-                        <li>Designed civilian behavior overrides (react, identify, track, dial 911, bravery) with timed transitions and cooldown logic.</li>
-                        <li>Built multi-state law-enforcement AI (patrol, pursue, attack) with quota management tied to awareness and emergency calls.</li>
-                        <li>Integrated sprite-sheet actor rendering (idle/run/die frame conventions) and retained color-coded threat readability.</li>
-                        <li>Shipped native packaging plus browser WASM build, with runtime config and records persistence.</li>
-                    </ul>
-                `
-            },
-            {
-                id: "pixel-monster-maker",
-                category: ["tools"],
-                label: "Tool",
-                title: "Pixel Monster Maker (procedural sprite generator)",
-                summary: "A browser-native TypeScript app that procedurally generates pixel monsters via seeded map synthesis, cellular automata, palette generation, and deterministic flood-fill coloring.",
-                stack: ["TypeScript", "Vite", "Canvas", "Procedural Generation"],
-                links: [
-                    { label: "Play on itch.io", url: "https://khaki-khameleon.itch.io/pixel-monster-generator", primary: true },
-                    { label: "Read Details", action: "modal" }
-                ],
-                details: `
-                    <p>This project focuses on reproducible procedural art. I split the generation pipeline into modular stages so each stage is testable and tunable.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Built end-to-end generation flow: symmetry-aware map generation, smoothing, palette synthesis, and grouped color assignment.</li>
-                        <li>Used deterministic seeds for map and fill operations to keep outputs reproducible across runs.</li>
-                        <li>Added export helpers for PNG and sprite sheets, and designed the UI for quick iterative experimentation.</li>
-                    </ul>
-                `
-            },
-            {
-                id: "pixel-sprite-maker",
-                category: ["games", "tools"],
-                label: "Game + Tool",
-                title: "Pixel Sprite Maker (beta generation experiments)",
-                summary: "A sprite-creation tool where I focused on original beta generators: a Markov head model with structure controls and a deterministic shape-grammar head generator.",
-                stack: ["JavaScript", "Canvas", "Markov Models", "Procedural Geometry"],
-                links: [
-                    { label: "Read Details", action: "modal" }
-                ],
-                details: `
-                    <p>For this repo, my focus is the beta generation research I implemented, not the inherited base sprite style pipeline.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Built Markov beta head generator with layered 2D contexts, patch consensus boosts, entropy controls, and post-generation structure repair.</li>
-                        <li>Implemented Shape Grammar beta head generator with deterministic composable geometry blocks (hat/mask/replacement/floating items).</li>
-                        <li>Added deterministic merge workflows, outline policies, and metadata export/import for reproducible generation state.</li>
-                        <li>Kept attribution boundaries explicit by documenting that core original sprite style assets are derivative work.</li>
-                    </ul>
-                `
-            },
-            {
-                id: "gemini-export",
-                category: ["tools"],
-                label: "Tool",
-                title: "Gemini Chat Exporter (Chrome extension)",
-                summary: "A Manifest V3 extension that exports Gemini conversations to Markdown and Word while preserving structure, code blocks, tables, and math expressions.",
-                stack: ["JavaScript", "Chrome Extension", "docx", "LaTeX Processing"],
-                links: [
-                    { label: "View Code", url: "https://github.com/ReneesmeS/gemini-chat-exporter-math", primary: true },
-                    { label: "Read Details", action: "modal" }
-                ],
-                details: `
-                    <p>I built this extension to solve a real workflow problem: preserving rich technical chat content in shareable document formats.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Implemented resilient DOM extraction across conversation structures (lists, tables, headings, code, quotes).</li>
-                        <li>Built modular exporter architecture with format-specific rendering for Markdown and DOCX.</li>
-                        <li>Added LaTeX normalization logic for improved compatibility with Word math rendering.</li>
-                    </ul>
-                `
-            },
-            {
-                id: "level-up-j",
-                category: ["tools"],
-                label: "Tool",
-                title: "Level Up J (offline-first study PWA)",
-                summary: "A local-first PWA that gamifies focus sessions with XP, rewards, and loot mechanics, with service-worker offline support and anti-cheat behavior.",
-                stack: ["JavaScript", "PWA", "Local Storage", "UX"],
-                links: [
-                    { label: "Open App", url: "http://fandasoft.com/levelupj", primary: true },
-                    { label: "Read Details", action: "modal" }
-                ],
-                details: `
-                    <p>Level Up J began as a motivation project and grew into a polished local-first product with clear progression loops and persistence.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Implemented focus-session reward economy with configurable progression and rarity-driven loot probabilities.</li>
-                        <li>Added service worker + manifest architecture for offline app-shell behavior.</li>
-                        <li>Designed anti-cheat focus mode that pauses active sessions when the app is backgrounded.</li>
-                    </ul>
-                `
-            },
-            {
-                id: "bin-packing",
-                category: ["research"],
-                label: "Research",
-                title: "3D Bin Packing Optimization Research",
-                summary: "Research project on logistics optimization using Satisfiability Modulo Theories (SMT), achieving about 5% better packing efficiency than baseline heuristics.",
-                stack: ["Optimization", "SMT", "Algorithms", "Research"],
-                links: [{ label: "Read Details", action: "modal", primary: false }],
-                details: `
-                    <p>In this research project, I modeled the 3D bin packing problem as a constrained optimization task and benchmarked solver-based methods against heuristics.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Formulated non-overlap and placement constraints for solver-compatible optimization.</li>
-                        <li>Compared SMT-based search to common heuristic baselines for utilization quality.</li>
-                        <li>Reported measurable improvement in packing efficiency with practical logistics relevance.</li>
-                    </ul>
-                `
-            },
-            {
-                id: "book-rec",
-                category: ["research"],
-                label: "Research",
-                title: "Book Recommendation System (Naive Bayes)",
-                summary: "Independent research implementing a Naive Bayes recommendation model and comparing content-based and collaborative filtering trade-offs.",
-                stack: ["Python", "Machine Learning", "Statistics", "Data Analysis"],
-                links: [{ label: "Read Details", action: "modal", primary: false }],
-                details: `
-                    <p>This work focused on statistical learning for recommendation under sparse preference signals.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Implemented Naive Bayes classifier pipeline from preprocessing through evaluation.</li>
-                        <li>Compared recommendation strategies for precision, coverage, and practical behavior.</li>
-                        <li>Documented strengths and limitations to guide model selection under different constraints.</li>
-                    </ul>
-                `
-            },
-            {
-                id: "route-opt",
-                category: ["research"],
-                label: "Research",
-                title: "Route Optimization for Local Logistics",
-                summary: "Applied graph algorithms to optimize delivery routes during lockdown conditions, moving from DFS baselines to branch-and-bound with greedy bounds.",
-                stack: ["Graph Theory", "Branch and Bound", "Python", "Applied Algorithms"],
-                links: [{ label: "Read Details", action: "modal", primary: false }],
-                details: `
-                    <p>I built this during COVID to help a local bakery improve route planning under time pressure and limited resources.</p>
-                    <h4>Highlights</h4>
-                    <ul>
-                        <li>Modeled locations and travel costs as weighted graph search problems.</li>
-                        <li>Used nearest-neighbor heuristics to tighten branch-and-bound upper bounds.</li>
-                        <li>Iteratively improved solution quality and runtime compared with straightforward search.</li>
-                    </ul>
-                `
-            }
-        ];
-
-        const projectGrid = document.getElementById("project-grid");
-        const modal = document.getElementById("project-modal");
-        const modalTitle = document.getElementById("modal-title");
-        const modalContent = document.getElementById("modal-content");
-        const modalClose = document.getElementById("modal-close");
-        const filterButtons = document.querySelectorAll(".filter-btn");
-
-        let activeFilter = "all";
-
-        const monsterFrames = [
-            "assets/showcase/monsters/1.gif",
-            "assets/showcase/monsters/2.gif",
-            "assets/showcase/monsters/3.gif",
-            "assets/showcase/monsters/4.gif"
-        ];
-
-        const iconFrames = [
-            "assets/showcase/symbols/icon-symbol-12.png",
-            "assets/showcase/symbols/vector-editor-beta-1.png",
-            "assets/showcase/symbols/vector-editor-beta-2.png"
-        ];
-
-        function renderStats() {
-            const research = projects.filter((project) => project.category.includes("research")).length;
-            const itch = projects.filter((project) =>
-                project.links.some((link) => typeof link.url === "string" && link.url.includes("itch.io"))
-            ).length;
-
-            document.getElementById("stat-projects").textContent = `${projects.length}+`;
-            document.getElementById("stat-itch").textContent = `${itch}`;
-            document.getElementById("stat-research").textContent = `${research}`;
-            document.getElementById("year").textContent = String(new Date().getFullYear());
-        }
-
-        function buildCard(project) {
-            const links = project.links.map((link) => {
-                if (link.action === "modal") {
-                    return `<button class="mini-btn" type="button" data-open="${project.id}">${link.label}</button>`;
-                }
-                const primaryClass = link.primary ? " primary" : "";
-                return `<a class="mini-btn${primaryClass}" href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label}</a>`;
-            }).join("");
-
-            const stackTags = project.stack.map((item) => `<span>${item}</span>`).join("");
-
-            return `
-                <article class="project-card">
-                    <div class="project-top">
-                        <h3 class="project-title">${project.title}</h3>
-                        <span class="project-kind">${project.label}</span>
-                    </div>
-                    <p class="summary">${project.summary}</p>
-                    <div class="stack">${stackTags}</div>
-                    <div class="project-actions">${links}</div>
-                </article>
-            `;
-        }
-
-        function renderProjects() {
-            const filtered = projects.filter((project) => {
-                if (activeFilter === "all") {
-                    return true;
-                }
-                return project.category.includes(activeFilter);
-            });
-
-            projectGrid.innerHTML = filtered.map(buildCard).join("");
-
-            document.querySelectorAll("[data-open]").forEach((button) => {
-                button.addEventListener("click", () => {
-                    const match = projects.find((project) => project.id === button.getAttribute("data-open"));
-                    if (!match) {
-                        return;
-                    }
-                    modalTitle.textContent = match.title;
-                    modalContent.innerHTML = match.details;
-                    modal.classList.add("open");
-                    modal.setAttribute("aria-hidden", "false");
-                    document.body.style.overflow = "hidden";
-                });
-            });
-        }
-
-        filterButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                filterButtons.forEach((item) => item.classList.remove("active"));
-                button.classList.add("active");
-                activeFilter = button.dataset.filter;
-                renderProjects();
-            });
-        });
-
-        function closeModal() {
-            modal.classList.remove("open");
-            modal.setAttribute("aria-hidden", "true");
-            document.body.style.overflow = "";
-        }
-
-        function initShowcase() {
-            const monsterRotator = document.getElementById("monster-rotator");
-            if (monsterRotator) {
-                let monsterIndex = 0;
-                window.setInterval(() => {
-                    monsterIndex = (monsterIndex + 1) % monsterFrames.length;
-                    monsterRotator.src = monsterFrames[monsterIndex];
-                }, 2200);
-            }
-
-            const iconRotator = document.getElementById("icon-rotator");
-            if (iconRotator) {
-                let iconIndex = 0;
-                window.setInterval(() => {
-                    iconIndex = (iconIndex + 1) % iconFrames.length;
-                    iconRotator.src = iconFrames[iconIndex];
-                }, 1700);
-            }
-
-            const symbolCanvas = document.getElementById("symbol-crop-canvas");
-            const symbolLabel = document.getElementById("symbol-crop-label");
-            if (!symbolCanvas || !symbolLabel) {
-                return;
-            }
-
-            const ctx = symbolCanvas.getContext("2d");
-            if (!ctx) {
-                return;
-            }
-
-            const symbolSheet = new Image();
-            symbolSheet.src = "assets/showcase/symbols/symbol-sheet-24.png";
-            symbolSheet.addEventListener("load", () => {
-                const cols = 6;
-                const rows = 4;
-                const cellW = Math.floor(symbolSheet.width / cols);
-                const cellH = Math.floor(symbolSheet.height / rows);
-
-                const drawRandomCell = () => {
-                    const col = Math.floor(Math.random() * cols);
-                    const row = Math.floor(Math.random() * rows);
-                    const sx = col * cellW;
-                    const sy = row * cellH;
-
-                    ctx.clearRect(0, 0, symbolCanvas.width, symbolCanvas.height);
-                    ctx.fillStyle = "#07111d";
-                    ctx.fillRect(0, 0, symbolCanvas.width, symbolCanvas.height);
-                    ctx.drawImage(symbolSheet, sx, sy, cellW, cellH, 0, 0, symbolCanvas.width, symbolCanvas.height);
-                    symbolLabel.textContent = `Showing symbol ${row * cols + col + 1} / 24`;
-                };
-
-                drawRandomCell();
-                window.setInterval(drawRandomCell, 1800);
-            });
-
-            const spriteActors = [
-                {
-                    id: "sprite-actor-1",
-                    sheet: "assets/showcase/sprites/ever-civilian-9.png",
-                    row: 1,
-                    frames: 4,
-                    speedMs: 135
-                },
-                {
-                    id: "sprite-actor-2",
-                    sheet: "assets/showcase/sprites/ever-civilian-10.png",
-                    row: 0,
-                    frames: 4,
-                    speedMs: 160
-                },
-                {
-                    id: "sprite-actor-3",
-                    sheet: "assets/showcase/sprites/capel-actor-sheet.png",
-                    row: 102,
-                    frames: 4,
-                    speedMs: 130
-                },
-                {
-                    id: "sprite-actor-4",
-                    sheet: "assets/showcase/sprites/capel-ambassador-sheet.png",
-                    row: 92,
-                    frames: 4,
-                    speedMs: 150
-                },
-                {
-                    id: "sprite-actor-5",
-                    sheet: "assets/showcase/sprites/capel-farmer-sheet.png",
-                    row: 69,
-                    frames: 9,
-                    speedMs: 100
-                }
-            ];
-
-            const frameWidth = 32;
-            const frameHeight = 48;
-
-            spriteActors.forEach((actorDef) => {
-                const el = document.getElementById(actorDef.id);
-                if (!el) {
-                    return;
-                }
-
-                el.style.backgroundImage = `url(${actorDef.sheet})`;
-                let frame = 0;
-
-                const drawFrame = () => {
-                    const x = -frame * frameWidth;
-                    const y = -actorDef.row * frameHeight;
-                    el.style.backgroundPosition = `${x}px ${y}px`;
-                    frame = (frame + 1) % actorDef.frames;
-                };
-
-                drawFrame();
-                window.setInterval(drawFrame, actorDef.speedMs);
-            });
-        }
-
-        modalClose.addEventListener("click", closeModal);
-
-        modal.addEventListener("click", (event) => {
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") {
-                closeModal();
-            }
-        });
-
-        renderStats();
-        renderProjects();
-        initShowcase();
-    </script>
+    <script type="module" src="assets/js/app.js"></script>
 </body>
 </html>
